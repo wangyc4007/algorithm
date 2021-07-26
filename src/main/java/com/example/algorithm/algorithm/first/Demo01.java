@@ -1,4 +1,4 @@
-package com.example.algorithm.algorithm;
+package com.example.algorithm.algorithm.first;
 
 import org.junit.Test;
 
@@ -16,11 +16,25 @@ public class Demo01 {
      */
     @Test
     public void test01() {
-        int num = 6754;
+        int num = 4;
+        System.out.println(~4);
 //        System.out.println(num<<1);
 //        System.out.println(num*2);
 //        System.out.println(num*2 == num<<1);
         demo(num);
+        demo(-4);
+        demo(-5);
+        demo(~num);
+        demo(num<<1);
+        demo(num<<2);
+        demo(num<<3);
+    }
+
+    public void demo(int num) {
+        for (int i = 31; i >= 0; i--) {
+            System.out.print((num & (1 << i)) == 0 ? "0" : "1");
+        }
+        System.out.println();
     }
 
     /**
@@ -131,13 +145,6 @@ public class Demo01 {
     public void print(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
-        }
-        System.out.println();
-    }
-
-    public void demo(int num) {
-        for (int i = 31; i >= 0; i--) {
-            System.out.print((num & (1 << i)) == 0 ? "0" : "1");
         }
         System.out.println();
     }

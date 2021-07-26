@@ -1,4 +1,4 @@
-package com.example.algorithm.algorithm;
+package com.example.algorithm.algorithm.first;
 
 /**
  * 随机数

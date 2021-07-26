@@ -1,33 +1,60 @@
-package com.example.algorithm.algorithm;
+package com.example.algorithm.algorithm.first;
 
 /**
- * 对数器
+ * 二分法
  */
-public class Demo03 {
+public class Demo04 {
 
     public static void main(String[] args) {
-//        int[] arr = {3, 4, 7, 5, 1, 9, 3};
+        System.out.println("cehsi ");
+        int[] arr = {3, 4, 7, 5, 1, 9, 3, 2,1};
 //        print(arr);
 //        selectSort(arr);
-//        bubbleSort(arr);
+        bubbleSort(arr);
 //        insert(arr);
 //        print(arr);
-        int maxLen = 200;
-        int maxValue = 300;
-        int loopTime = 10000;
-        for(int i = 0; i < loopTime; i++){
-            int[] arr1 = lenRandomValueRandom(maxLen, maxValue);
-            int[] arr2 = copyArr(arr1);
-            insert(arr1);
-            bubbleSort(arr2);
-            if(!isSort(arr1)){
-                System.out.println("插入排序错误");
-            }
-            if(!isSort(arr2)){
-                System.out.println("冒泡排序错误");
+        if(exist(arr, 5)){
+            System.out.println("找到了！");
+        }else{
+            System.out.println("有問題");
+        }
+
+//        int maxLen = 30;
+//        int maxValue = 40;
+//        int loopTime = 200;
+//        for(int i = 0; i < loopTime; i++){
+//            int[] arr1 = lenRandomValueRandom(maxLen, maxValue);
+//            int[] arr2 = copyArr(arr1);
+//            insert(arr1);
+//            bubbleSort(arr2);
+//            if(!isSort(arr1)){
+//                System.out.println("插入排序错误");
+//            }
+//            if(!isSort(arr2)){
+//                System.out.println("冒泡排序错误");
+//            }
+//        }
+        System.out.println("···········结束··········");
+    }
+
+    //arr保证有序
+    public static boolean exist(int[] arr, int num){
+        if(arr == null || arr.length < 1){
+            return false;
+        }
+        int l = 0;
+        int r = arr.length - 1;
+        while(l <= r){
+            int mid = (l + r) / 2;
+            if(arr[mid] == num){
+                return true;
+            }else if(arr[mid] < num ){
+                l = mid + 1;
+            }else {
+                r = mid - 1;
             }
         }
-        System.out.println("···········结束··········");
+        return false;
     }
 
     //生成一个随机数组
@@ -63,9 +90,6 @@ public class Demo03 {
         }
         return true;
     }
-
-
-
     //插入排序
     public static void insert(int[] arr){
         if (arr == null || arr.length < 2) {
@@ -122,4 +146,5 @@ public class Demo03 {
         }
         System.out.println();
     }
+
 }
