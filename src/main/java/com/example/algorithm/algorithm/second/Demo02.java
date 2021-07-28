@@ -11,6 +11,9 @@ public class Demo02 {
 
     @Test
     public void test01(){
+        double random = Math.random();
+        System.out.println(random);
+        System.out.println("=============");
         for (int i = 0; i < 10; i++) {
             System.out.println(Math.random());
         }
